@@ -1,0 +1,123 @@
+
+/* sidebar related */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    min-width: 300px;
+    height: 100%;
+    background-color: #343434;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.profile-pic {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.banner {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+.name {
+    font-weight: 1000;
+    color: white;
+    font-size: 38px;
+}
+.navbar {
+    margin-top: 80px;
+}
+.sidebar-tagline {
+    color: #d4d3c3;
+}
+/* main */
+
+h2, h1 {
+    color: #343434;
+    font-family: arimo;
+    
+}
+p {
+    color: dimgray;
+    font-family: arimo;
+}
+.head{
+    width: 100%;
+    height: 500px;
+}
+.section{
+    padding-left: 20%;
+    margin-top: 10%;
+    padding-right: 20%;
+    margin-bottom: 10%;
+}
+.section-heading{
+    font-size: 64px;
+    font-weight: 1000px
+}
+.section-content{
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 100;
+}
+/* Cards */
+.features{
+    margin-top: 100px;
+}
+.card{
+    display: flex;
+    align-items: flex-start;
+    margin-top: 40;
+    margin-bottom: 40;
+}
+.card img{
+    min-height: 200px;
+    min-width: 300px;
+    max-height: 200px;
+    max-width: 300;
+    object-fit: contain;
+    border-radius: 5px; 
+}
+.card-description {
+    margin: auto;
+    margin-left: 30;
+    padding-right: 30;
+}
+
+/* Navigation links */
+nav a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+nav a:hover {
+    background-color: #444;
+}
+main {
+    margin-left: 20%;
+    padding: 0;
+}
+footer{
+    background-color: #e8e8e8;
+    height: 20%;
+}
+
+/* fonts */ 
+.arimo {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1;
+    font-style: normal;
+}
