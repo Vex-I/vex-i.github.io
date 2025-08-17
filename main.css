@@ -7,10 +7,11 @@
     width: 20%;
     min-width: 300px;
     height: 100%;
-    background-color: #343434;
+    background-color: #161625;
     color: white;
     text-align: center;
     padding-top: 20px;
+    border-radius: 16px;
 }
 
 .profile-pic {
@@ -39,14 +40,20 @@
 }
 /* main */
 
+
+body{
+    background-color: #11111d;
+}
+
 h2, h1 {
     color: #343434;
-    font-family: arimo;
+    font-family: roboto;
     
 }
 p {
     color: dimgray;
-    font-family: arimo;
+    font-family: roboto;
+
 }
 .head{
     width: 100%;
@@ -55,7 +62,7 @@ p {
 .section{
     padding-left: 20%;
     margin-top: 10%;
-    padding-right: 20%;
+    padding-right: 10%;
     margin-bottom: 10%;
 }
 .section-heading{
@@ -66,30 +73,67 @@ p {
     margin-top: 0;
     font-size: 20px;
     font-weight: 100;
+    letter-spacing: 1;
+    word-spacing: 3;
 }
 /* Cards */
 .features{
-    margin-top: 100px;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
 }
 .card{
     display: flex;
     align-items: flex-start;
-    margin-top: 40;
-    margin-bottom: 40;
+    margin-top: 10;
+    margin-bottom: 10;
+    max-width: 90%;
+    height: 300px;
+    background-color: #161625;
+    border-radius: 8px;
 }
-.card img{
-    min-height: 200px;
-    min-width: 300px;
-    max-height: 200px;
-    max-width: 300;
+.card-img img{
+    width: 300px;
+    height: 200px;
     object-fit: contain;
-    border-radius: 5px; 
+    border-radius: 4px;
 }
-.card-description {
+.card-img{
+    padding-top: 10;
+    padding-bottom: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4px;
+}
+.card-description{
     margin: auto;
-    margin-left: 30;
-    padding-right: 30;
+    margin-left: 70;
+
 }
+.card-description p {
+    letter-spacing: 1;
+    word-spacing: 3;
+    font-size: 20;
+
+}
+.card-description h2{
+    font-size: 24;
+    color: white;
+    font-weight: 5000;
+    background-color: gray;
+    border-radius: 4px;
+    padding-left: 10;
+}
+.divider{
+    width: 100%;
+    opacity: 30%;
+}
+
 
 /* Navigation links */
 nav a {
@@ -115,9 +159,12 @@ footer{
 }
 
 /* fonts */ 
-.arimo {
-    font-family: "Arimo", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 1;
-    font-style: normal;
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
+
