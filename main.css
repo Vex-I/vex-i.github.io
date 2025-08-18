@@ -90,11 +90,30 @@
 }
 header {
     background-color: #FAF9EE;
-    min-height: 60;
+    height: 60;
     position: sticky;
     top: 0;
-    border-bottom: solid 2px gray;
+    border-bottom: solid 2px lightgray;
     z-index: 2;
+    display: flex;
+    flex-direction: row;
+}
+.left-header{
+    overflow: hidden;
+    width:50%;
+}
+.left-header img{
+    position: relative;
+    top: -75;
+    left: -60;
+    object-fit: fill;
+    width: 400
+}
+.right-header{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }
 
 body {
