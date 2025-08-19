@@ -70,6 +70,7 @@
 .profile-pic-wrapper{
     padding-top: 50;
     padding-bottom: 50;
+    margin-left: 5%;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -79,7 +80,12 @@
     width: 100%;
     color: #EEEEEE;
     font-size: 64;
+    margin:0;
     text-align: center;
+}
+.profile-pic-wrapper p{
+    text-align: center;
+    width:100%;
 }
 .about .profile-pic-wrapper img {
     border: solid 4px gray;
@@ -103,15 +109,17 @@
     width: 100%;
     height: 100%;
     background-image: url('assets/images/banner2.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     z-index: 0;
-    filter: brightness(1);
+    filter: brightness(1.5);
 }
 .dark-section{
     position: absolute;
     background-color: black;
-    width: 50%;
+    width: 55%;
     height: 100%;
     opacity: 0.7;
 
@@ -157,11 +165,11 @@ body {
 
 h2,
 h1 {
-    color: dimgray;
+    color: black;
     font-family: roboto;
 }
 p {
-    color: dimgray;
+    color: black;
     font-family: roboto;
 }
 .head {
@@ -208,6 +216,7 @@ p {
     background-color: #EEEEEE;
     transition: transform 0.3s ease;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
 }
 .card:hover {
   transform: scale(1.05);
