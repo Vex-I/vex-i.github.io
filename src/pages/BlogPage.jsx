@@ -8,7 +8,7 @@ export default function BlogPost() {
 
   //fetch the markdown file based on the slug parameter
   React.useEffect(() => {
-    fetch(`/posts/${slug}.md`)
+    fetch(`${process.env.PUBLIC_URL}/posts/${slug}.md`)
       .then((res) => res.text())
       .then(setContent);
   }, [slug]);
