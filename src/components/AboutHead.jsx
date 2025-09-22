@@ -5,8 +5,8 @@ const AboutHead = () => (
     <div>
         <h1>
             <span className="red text-heading"> {'>'} </span>
-            <span className="yellow text-heading">{"NawwafSudi"}</span>
-            <span className="grey text-heading">{".Greet()"}</span>
+            <span className="yellow text-heading">{"Console"}</span>
+            <span className="grey text-heading">{".PrintIntro()"}</span>
         </h1>
         <section>
             <p className="text white">

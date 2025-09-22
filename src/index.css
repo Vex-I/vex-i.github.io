@@ -1,5 +1,6 @@
 @import './styles/font.css';
 @import './styles/navbar.css';
+@import './styles/bloglist.css';
 body {
   margin: 0;
 }
@@ -15,7 +16,7 @@ body{
   justify-content: center;
 }
 #root{
-  max-width: 700px;
+  max-width: 900px;
   padding: 20px;
   background-color: transparent
 }

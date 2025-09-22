@@ -1,9 +1,14 @@
+/*
+TODO: Add some animations for toggling the menu. Ease-in-out should do it.
+*/
+
 /* Navbar.css */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  margin-bottom: 5%;
   background-color: #1f1f23;
   color: #debc93;
   flex-wrap: wrap;
