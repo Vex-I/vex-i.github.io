@@ -1,0 +1,54 @@
+@import './styles/font.css';
+@import './styles/navbar.css';
+@import './styles/bloglist.css';
+body {
+  margin: 0;
+}
+
+code {
+  font-family: 'Monaspace Argon', monospace;
+}
+
+body{
+  background-color: #1f1f23;
+  color: #d4d3c3;
+  display: flex;
+  justify-content: center;
+}
+#root{
+  max-width: 900px;
+  padding: 20px;
+  background-color: transparent
+}
+.text{
+  text-align: left;;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.text-heading{
+  text-align: left;
+  font-family: 'Monaspace Argon', monospace;
+  font-size: 32px;
+  line-height: 1.6;
+}
+.hyper-link{
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  text-decoration: underline;
+}
+
+.centered-image {
+  display: block;      
+  margin: 0 auto;      
+  max-width: 50%;     
+  height: auto; 
+}
+
+.red {color:#ff5757;}
+.yellow {color: #e5c9a6;}
+.grey {color: #3d3d49;}
+.blue {color: #1f1f23;}
+.white {color: #debc93;}
