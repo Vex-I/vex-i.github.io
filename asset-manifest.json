@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b90af386.css",
+    "main.js": "/static/js/main.9d47cb8b.js",
+    "static/js/453.22b4f05e.chunk.js": "/static/js/453.22b4f05e.chunk.js",
+    "static/media/blog1.jpg": "/static/media/blog1.ec104b87d6a3d138e6ce.jpg",
+    "static/media/MonaspaceArgonNF-Regular.woff2": "/static/media/MonaspaceArgonNF-Regular.d924f012a2870c4e1372.woff2",
+    "static/media/profile-pic.jpg": "/static/media/profile-pic.f0dfbbd732c306ea9455.jpg",
+    "static/media/banner2.jpg": "/static/media/banner2.b3b20e8037a53a36b458.jpg",
+    "static/media/Vimblog.png": "/static/media/Vimblog.783a05b4cad6f4c7bfe6.png",
+    "static/media/Meme.jpeg": "/static/media/Meme.659a33b663e80139498f.jpeg",
+    "static/media/mbilogocard.png": "/static/media/mbilogocard.82bda428652b01e02f2b.png",
+    "static/media/header-bg.svg": "/static/media/header-bg.3b1830a39f57f660be5a.svg",
+    "static/media/header-bg2.svg": "/static/media/header-bg2.af90ba04548ee04a6e72.svg",
+    "static/media/quillycard.png": "/static/media/quillycard.e0ccaa040bd1440fddb5.png",
+    "static/media/echomagecard.png": "/static/media/echomagecard.6c8b2205cc11a82afc49.png",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "static/media/menu.svg": "/static/media/menu.b568370f42645906ff564ac64d664d70.svg",
+    "main.b90af386.css.map": "/static/css/main.b90af386.css.map",
+    "main.9d47cb8b.js.map": "/static/js/main.9d47cb8b.js.map",
+    "453.22b4f05e.chunk.js.map": "/static/js/453.22b4f05e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b90af386.css",
+    "static/js/main.9d47cb8b.js"
+  ]
+}
