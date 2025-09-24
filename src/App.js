@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import About from './pages/About';
 import BlogView from './pages/BlogView';
+import BlogPost from './pages/BlogPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/blog" element={<BlogView/>}/>
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
   </Router>
   );

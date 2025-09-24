@@ -1,21 +1,22 @@
 import React from 'react';
-import logo from '../assets/Meme.jpeg';
 
 const AboutHead = () => (
-    <div>
-        <h1>
+    <div className='about-container'>
+        <div>
+        <h4>
             <span className="red text-heading"> {'>'} </span>
-            <span className="yellow text-heading">{"Console"}</span>
+            <span className="yellow text-heading">{"Action"}</span>
             <span className="grey text-heading">{".PrintIntro()"}</span>
-        </h1>
+        </h4>
         <section>
-            <p className="text white">
+            <h3 className="text-heading white">
                 Hello World! My name is Nawwaf Sudi, an Undergraduate student 
                 studying Data Science and Analytics at the National University of Singapore (
-                <a className= "hyper-link red" href='https://nus.edu.sg/'>NUS</a>). Physicist turned programmer, I am passionate about leveraging technology to solve real-world problems. 
-                I have a keen interest in software development, data science, and machine learning.
-            </p>
+                <a className= "hyper-link red" href='https://nus.edu.sg/'>NUS</a>).
+            </h3>
             <p className='text white'>
+                 Physicist turned programmer, I am passionate about leveraging technology to solve real-world problems. 
+                I have a keen interest in software development, data science, and machine learning.
                     In a more personal note, I'm also intereseted in game development, and have quite a few projects using Unity, 
                     collaborating with friends to create games. You can check out some of my projects on both my itch.io page
                     and my blog <a className="hyper-link red" href='https://github.com/Vex-I'>here</a>.
@@ -28,6 +29,9 @@ const AboutHead = () => (
                 I'm always eager to connect, so feel free to <a className="hyper-link red" href='https://github.com/Vex-I'>reach out</a>!
             </p>
         </section>
+        </div>
+
+        <img viewbox= "0 0 100 100" src="/githublogo.svg" />
     </div>
 );
 

@@ -16,8 +16,8 @@ body{
   justify-content: center;
 }
 #root{
-  max-width: 900px;
-  padding: 20px;
+  width: 80%;
+  padding: 10px;
   background-color: transparent
 }
 .text{
@@ -29,7 +29,19 @@ body{
 .text-heading{
   text-align: left;
   font-family: 'Monaspace Argon', monospace;
-  font-size: 32px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Monaspace Argon', monospace;
+  text-align: left;
+  color: #ff5757;
+  line-height: 1.4;
+}
+
+p{
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
   line-height: 1.6;
 }
 .hyper-link{
@@ -47,6 +59,34 @@ body{
   height: auto; 
 }
 
+.about-container{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  padding: 40px;
+  background-color: #252529;
+  border-radius: 8px;
+  grid-template-columns: 2fr 1fr; /* ratio 2:1 */
+  transition: transform 0.3s ease;
+}
+/* Cutoff point when the about head turns into a collumn*/
+@media (max-width: 1100px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+}
+.about-container img{
+  min-width: 300px;
+  justify-self: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-container:hover{
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
 .red {color:#ff5757;}
 .yellow {color: #e5c9a6;}
 .grey {color: #3d3d49;}

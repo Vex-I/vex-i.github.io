@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
+import fm from "front-matter";
 
 //Directory of the .md stuff
-const postsDir = path.join(process.cwd(), "src/posts");
+const postsDir = path.join(process.cwd(), "public/posts");
 const outputFile = path.join(process.cwd(), "src/posts.json");
 
 // Read all the .md file in the posts directory
@@ -14,14 +14,14 @@ const posts = files.map((file) => {
   const rawContent = fs.readFileSync(filePath, "utf-8");
 
   // Splits metadata from content
-  const { data } = matter(rawContent);
+  const data = fm(rawContent);
 
   return {
     slug: file.replace(/\.md$/, ""), 
-    title: data.title,
-    date: data.date,
-    excerpt: data.excerpt || "",
-    image: data.image || "",
+    title: data.attributes.title,
+    date: data.attributes.date,
+    excerpt: data.attributes.excerpt || "",
+    image: data.attributes.image || "",
   };
 });
 

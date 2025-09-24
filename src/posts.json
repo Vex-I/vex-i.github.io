@@ -1,16 +1,16 @@
 [
   {
-    "slug": "first-blog",
-    "title": "Test posts for tests people",
+    "slug": "rudrimentarycms",
+    "title": "Test Posts for Tests People",
     "date": "22/09/2025",
-    "excerpt": "An overview of the admitably rudrimentary blog system of this website.",
+    "excerpt": "An overview of the blog system, for those who care.",
     "image": "blog1.jpg"
   },
   {
-    "slug": "second-blog",
-    "title": "Latex Notetaking with Vim",
+    "slug": "vim-latex-setup",
+    "title": "Vim + LaTex for Rapid, Clean Notetaking",
     "date": "23/09/2025",
-    "excerpt": "Latex is a neat way for you to spruce up your note and reports, though some find it a bit cumbersome. Combined with VimSnippets however, this barrier is non-existent.",
+    "excerpt": "Read on how I use VimSnippets and LaTex as my main note taking method, free of hassle.",
     "image": "Vimblog.png"
   }
 ]
