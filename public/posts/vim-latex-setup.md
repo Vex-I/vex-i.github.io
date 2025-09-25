@@ -5,20 +5,24 @@ excerpt: "Read on how I use VimSnippets and LaTex as my main note taking method,
 image: "Vimblog.png"
 ---
 
----
 # Vim + LaTex for rapid, Clean Notetaking
 ---
-Here's a story: You're in a 8am lecture, running on 4 hours of sleep, tired to the bones, and you forgot 
-to bring your pen for todays quiz. You're screwed right? Well, you're in my shoes early on in the semester, 
-and you ARE screwed. 
 
-It was a couple of minutes into the lecture when I
-It was then when I began to wonder, just how far can typing get you?
+## 1. Background
+Here's a situation: You're taking notes for one of your Mathematics course, religiously writing down equations after equations. While you wrote, you 
+missed some important points that your prof told you, and you went back to your room. It was only then did you realize that 
 
-> ## So, i dug further.
-I found that you could type SERIOUSLY quickly, paired with the right tools. This guy did an excellent video demonstration on how fast it could 
-seriously be. Long story short, he recomended me this blog, made by the late Gilles Castel, explaing in detail his setup and some more. I seriously reccomend you
+$If$ any of this sounds familiar to you, then you might want to consider switching to LaTex notetaking. 
+
+Writing in LaTex, as many math majors would tell you, is excrutiatingly slow. 
+
+The late Gilles Castel, explains this in Quora and, later, in his blog, going into details 
 check his blog out. 
+
+
+
+
+## 2. Overview of the Setup
 
 This is how my screen look for a typical session. I use SumatraPDF for my PDF viewer, simply for the reason that I couldn't be bothered to install
 WSL. Of course, if you are in a linux environment, I would reccomend Zathura or other similar PDF viewer that can be run in the terminal.
@@ -27,6 +31,4 @@ WSL. Of course, if you are in a linux environment, I would reccomend Zathura or 
 
 
 
-
----
 

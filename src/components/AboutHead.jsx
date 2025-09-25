@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactList from './ContactList';
 
 const AboutHead = () => (
     <div className='about-container'>
@@ -8,6 +9,7 @@ const AboutHead = () => (
             <span className="yellow text-heading">{"Action"}</span>
             <span className="grey text-heading">{".PrintIntro()"}</span>
         </h4>
+        <div className='left-section'>
         <section>
             <h3 className="text-heading white">
                 Hello World! My name is Nawwaf Sudi, an Undergraduate student 
@@ -29,6 +31,8 @@ const AboutHead = () => (
                 I'm always eager to connect, so feel free to <a className="hyper-link red" href='https://github.com/Vex-I'>reach out</a>!
             </p>
         </section>
+        <ContactList />
+        </div>
         </div>
 
         <img viewbox= "0 0 100 100" src="/githublogo.svg" />

@@ -22,7 +22,7 @@ export default function BlogPost() {
   return (
     <article className="blog-container">
       <section>
-      <ReactMarkdown>{content}</ReactMarkdown>
+        <ReactMarkdown>{content}</ReactMarkdown>
       </section>
     </article>
   );

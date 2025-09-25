@@ -15,11 +15,13 @@ body{
   display: flex;
   justify-content: center;
 }
+
 #root{
-  width: 80%;
   padding: 10px;
-  background-color: transparent
+  background-color: transparent;
+  width: 95%;
 }
+
 .text{
   text-align: left;;
   font-family: 'Roboto', sans-serif;
@@ -52,12 +54,6 @@ p{
   text-decoration: underline;
 }
 
-.centered-image {
-  display: block;      
-  margin: 0 auto;      
-  max-width: 50%;     
-  height: auto; 
-}
 
 .about-container{
   display: grid;
@@ -75,6 +71,9 @@ p{
   .about-container {
     grid-template-columns: 1fr;
   }
+  .about-container img {
+    display: none;
+  }
 }
 .about-container img{
   min-width: 300px;
@@ -87,6 +86,39 @@ p{
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
+
+.contact-list{
+  list-style: none;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  padding: 0;
+  height: 64px;
+}
+
+.contact-list a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  margin-right: 10px;
+}
+.contact-list a img{
+  transition: transform 0.2s;
+  width: auto;
+  height: 100%;
+}
+
+.contact-list a img:hover{
+  transform: scale(1.2);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+
+
+
 .red {color:#ff5757;}
 .yellow {color: #e5c9a6;}
 .grey {color: #3d3d49;}
