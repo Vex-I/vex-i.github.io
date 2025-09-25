@@ -17,6 +17,7 @@ body{
 }
 
 #root{
+  justify-items: center;
   padding: 10px;
   background-color: transparent;
   width: 95%;
