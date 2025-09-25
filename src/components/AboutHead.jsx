@@ -4,16 +4,14 @@ import ContactList from './ContactList';
 const AboutHead = () => (
     <div className='about-container'>
         <div>
-        <h4>
-            <span className="red text-heading"> {'>'} </span>
-            <span className="yellow text-heading">{"Action"}</span>
-            <span className="grey text-heading">{".PrintIntro()"}</span>
-        </h4>
         <div className='left-section'>
         <section>
-            <h3 className="text-heading white">
-                Hello World! My name is Nawwaf Sudi, an Undergraduate student 
-                studying Data Science and Analytics at the National University of Singapore (
+            <h3 className="text-heading red">
+                Hello World! My name is Nawwaf Sudi, 
+            </h3>
+            <h3 className="text-subheading white">
+                an Undergraduate student 
+                studying Data Science and Analytics @ National University of Singapore (
                 <a className= "hyper-link red" href='https://nus.edu.sg/'>NUS</a>).
             </h3>
             <p className='text white'>
@@ -31,10 +29,10 @@ const AboutHead = () => (
                 I'm always eager to connect, so feel free to <a className="hyper-link red" href='https://github.com/Vex-I'>reach out</a>!
             </p>
         </section>
+        
+        </div>
         <ContactList />
         </div>
-        </div>
-
         <img viewbox= "0 0 100 100" src="/githublogo.svg" />
     </div>
 );

@@ -3,6 +3,7 @@
     margin-top: 20px;
     background-color: transparent;
     width: 100%;
+    transition: transform 0.3s ease;
 }
 
 .card-button{
@@ -40,7 +41,7 @@
     width: 100%;
     height: 100%;
     background-color: #252529;
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.2s;

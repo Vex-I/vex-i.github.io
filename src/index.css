@@ -1,6 +1,7 @@
 @import './styles/font.css';
 @import './styles/navbar.css';
 @import './styles/bloglist.css';
+
 body {
   margin: 0;
 }
@@ -11,6 +12,7 @@ code {
 
 body{
   background-color: #1f1f23;
+  background-size: cover;
   color: #d4d3c3;
   display: flex;
   justify-content: center;
@@ -18,9 +20,9 @@ body{
 
 #root{
   justify-items: center;
-  padding: 10px;
+  padding: 0px, 10px 10px;
   background-color: transparent;
-  width: 95%;
+  width: 100%;
 }
 
 .text{
@@ -32,8 +34,8 @@ body{
 .text-heading{
   text-align: left;
   font-family: 'Monaspace Argon', monospace;
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 42px;
+  line-height: 1;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Monaspace Argon', monospace;
@@ -61,11 +63,12 @@ p{
   justify-content: center;
   align-items: center;
   gap: 70px;
-  padding: 40px;
+  padding: 0px 40px 40px 40px;
   background-color: #252529;
-  border-radius: 8px;
+  border-radius: 32px;
   grid-template-columns: 2fr 1fr; /* ratio 2:1 */
   transition: transform 0.3s ease;
+  margin-bottom: 5%;
 }
 /* Cutoff point when the about head turns into a collumn*/
 @media (max-width: 1100px) {
@@ -81,10 +84,11 @@ p{
   justify-self: center;
   max-width: 100%;
   height: auto;
+  transition: transform 0.3s ease;
 }
 
-.about-container:hover{
-  transform: scale(1.02);
+.about-container img:hover{
+  transform: scale(1.05);
   transition: transform 0.3s ease;
 }
 
@@ -116,6 +120,20 @@ p{
   transition: transform 0.2s;
   cursor: pointer;
 }
+
+.left-section {
+  padding: 2.5%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.left-section:hover{
+  transform: scale(1.02);
+  transition: transform 0.4s ease;
+}
+
+
+
 
 
 

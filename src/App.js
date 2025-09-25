@@ -10,11 +10,13 @@ function App() {
   return (
   <Router>
     <NavBar />
+    <div style={{width: '95%'}}>
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/blog" element={<BlogView/>}/>
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
+    </div>
   </Router>
   );
 }

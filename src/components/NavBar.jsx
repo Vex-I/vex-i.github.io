@@ -5,6 +5,7 @@ const NavBar = () => {
     const [open, setOpen] = useState(false);
     return(
     <nav className="navbar">
+        <div className='nav-content'>
         <h1 className="logo"># Nawwaf Sudi</h1>
         <button className="menuButton" onClick={() => setOpen(!open)}>
             <MenuLogo className='size-6'/>
@@ -15,6 +16,7 @@ const NavBar = () => {
             <li><Link to="/projects">/projects</Link></li>
             <li><Link to="/modules">/modules</Link></li>
         </ul>
+        </div>
     </nav>
   );
 };
