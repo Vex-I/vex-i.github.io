@@ -10,7 +10,7 @@ function App() {
   return (
   <Router>
     <NavBar />
-    <div style={{width: '95%'}}>
+    <div className="main-content">
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/blog" element={<BlogView/>}/>

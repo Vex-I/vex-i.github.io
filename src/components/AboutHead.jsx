@@ -1,13 +1,16 @@
 import React from 'react';
 import ContactList from './ContactList';
 
+
 const AboutHead = () => (
+    <div className='about-head'>
+    <div className='about-border'/>
     <div className='about-container'>
-        <div>
         <div className='left-section'>
         <section>
-            <h3 className="text-heading red">
-                Hello World! My name is Nawwaf Sudi, 
+            <h3 className="text-heading">
+                <span className='red'>Hi! I'm </span> 
+                <span className='yellow'>Nawwaf Sudi</span> 
             </h3>
             <h3 className="text-subheading white">
                 an Undergraduate student 
@@ -29,11 +32,11 @@ const AboutHead = () => (
                 I'm always eager to connect, so feel free to <a className="hyper-link red" href='https://github.com/Vex-I'>reach out</a>!
             </p>
         </section>
-        
         </div>
-        <ContactList />
+        <div className='right-section'>
+            <div style={{backgroundImage: "url('/profile-pic.jpg')"}}></div>
         </div>
-        <img viewbox= "0 0 100 100" src="/githublogo.svg" />
+    </div>
     </div>
 );
 

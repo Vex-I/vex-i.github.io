@@ -1,0 +1,130 @@
+@property --start {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --pos {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 10%;
+}
+
+
+.about-head {
+    position: relative;
+}
+
+
+.about-border {
+    width: 100%;
+    height: 40px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #9c635897;
+}
+
+
+.about-container{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  background: linear-gradient(36deg, #1f1f2343 80%, #c77d7042 20%),
+  linear-gradient(to left, #201e2d3a 0%, #ea535838 100%);
+  backdrop-filter: blur(30px);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  grid-template-columns: 2fr 1fr; /* ratio 2:1 */
+  transition: transform 0.3s ease;
+  margin-bottom: 5%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Cutoff point when the about head turns into a collumn*/
+@media (max-width: 1100px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+  .right-section {
+    width: 0%;
+    height: 0%;
+    padding: 0%;
+    display: none;
+  }
+  
+  .right-section div {
+    display: none;
+  }
+}
+
+
+.right-section {
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.right-section div {
+    background-color: #28282d;
+    background-size: cover;
+    background-position-x: -150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 70%;
+    height: 70%;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.contact-list{
+  list-style: none;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  padding: 0;
+  height: 64px;
+}
+
+.contact-list a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  margin-right: 10px;
+}
+.contact-list a img{
+  transition: transform 0.2s;
+  width: auto;
+  height: 100%;
+}
+
+.contact-list a img:hover{
+  transform: scale(1.2);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.left-section {
+    background: transparent;
+    transition: --start 0.3s ease, --pos 0.3s ease;
+    border-bottom-left-radius: 8px;
+    --start: transparent;
+    --pos: 0%;
+    background: linear-gradient(90deg, var(--start) var(--pos), transparent 20%);
+    padding: 30px 30px 30px 30px;
+}
+
+.left-section:hover {
+    --start: #c77d7017;
+    --pos: 30%;
+}
+
+

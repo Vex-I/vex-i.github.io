@@ -1,19 +1,18 @@
 @import './styles/font.css';
 @import './styles/navbar.css';
 @import './styles/bloglist.css';
+@import './styles/about.css';
 
-body {
-  margin: 0;
-}
 
 code {
   font-family: 'Monaspace Argon', monospace;
 }
 
 body{
-  background-color: #1f1f23;
+  margin: 0;
+  background: linear-gradient(216deg, #1f1f23 10%, #1f1f23 50%);
   background-size: cover;
-  color: #d4d3c3;
+  color: #f3f3f3;
   display: flex;
   justify-content: center;
 }
@@ -57,89 +56,8 @@ p{
   text-decoration: underline;
 }
 
-
-.about-container{
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
-  padding: 0px 40px 40px 40px;
-  background-color: #252529;
-  border-radius: 32px;
-  grid-template-columns: 2fr 1fr; /* ratio 2:1 */
-  transition: transform 0.3s ease;
-  margin-bottom: 5%;
-}
-/* Cutoff point when the about head turns into a collumn*/
-@media (max-width: 1100px) {
-  .about-container {
-    grid-template-columns: 1fr;
-  }
-  .about-container img {
-    display: none;
-  }
-}
-.about-container img{
-  min-width: 300px;
-  justify-self: center;
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.about-container img:hover{
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-.contact-list{
-  list-style: none;
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  padding: 0;
-  height: 64px;
-}
-
-.contact-list a{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 64px;
-  height: 64px;
-  margin-right: 10px;
-}
-.contact-list a img{
-  transition: transform 0.2s;
-  width: auto;
-  height: 100%;
-}
-
-.contact-list a img:hover{
-  transform: scale(1.2);
-  transition: transform 0.2s;
-  cursor: pointer;
-}
-
-.left-section {
-  padding: 2.5%;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.left-section:hover{
-  transform: scale(1.02);
-  transition: transform 0.4s ease;
-}
-
-
-
-
-
-
-
 .red {color:#ff5757;}
-.yellow {color: #e5c9a6;}
+.yellow {color: #e8c088;}
 .grey {color: #3d3d49;}
 .blue {color: #1f1f23;}
-.white {color: #d4d3c3;}
+.white {color: #f3f3f3;}

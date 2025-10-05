@@ -5,7 +5,7 @@ TODO: Add some animations for toggling the menu. Ease-in-out should do it.
 /* Navbar.css */
 .navbar {
   justify-items: center;
-  padding: 20px;
+  padding: 0;
   margin-bottom: 2.5%;
   background-color: transparent;
   backdrop-filter: blur(10px);

@@ -6,10 +6,9 @@ const About = () => (
     <div style={{display: 'flex', flexDirection: 'column', gap: '20px', paddingBottom: '50px', alignItems: 'center'}}>
         <AboutHead />
 
-        <h1>
-            <span>{"> "}</span>  
+        <h1 style={{width: '100%', textAlign: 'left'}}>
             <span className="yellow">{"Recent Post"}</span>
-            <span className="red">{"."}</span>
+            <span className="white">{"."}</span>
         </h1>
         
         <BlogList style={{}} count={3}/>
