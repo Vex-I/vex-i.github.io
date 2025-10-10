@@ -1,0 +1,44 @@
+.about-header{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2.3fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+    .about-header {
+        grid-template-columns: 0fr 1fr 0fr;
+        gap:0px;
+    }   
+    .right-header {
+        visibility: hidden;
+    }
+    .left-header {
+        visibility: hidden;
+    }
+}
+
+.right-header {
+    display:grid;
+    gap: 1.5rem;
+    grid-template-rows: 1fr 2fr;
+}
+
+.iotd {
+    border-radius: 8px;
+    border: solid #d4d3c3 2px;
+    height: 100%;
+}
+
+
+
+.spotify-widget {
+    border-radius: 8px;
+    border: solid #d4d3c3 2px;
+}
+
+.todo-widget {
+    border-radius: 8px;
+    border: solid #d4d3c3 2px;   
+}

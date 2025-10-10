@@ -2,7 +2,7 @@
 @import './styles/navbar.css';
 @import './styles/bloglist.css';
 @import './styles/about.css';
-
+@import './styles/widget.css';
 
 code {
   font-family: 'Monaspace Argon', monospace;
@@ -10,7 +10,7 @@ code {
 
 body{
   margin: 0;
-  background: linear-gradient(216deg, #1f1f23 10%, #1f1f23 50%);
+  background:  #1f1f23;
   background-size: cover;
   color: #f3f3f3;
   display: flex;

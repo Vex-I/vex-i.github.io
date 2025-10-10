@@ -13,17 +13,13 @@
     all: unset;
     cursor: pointer;
     padding: 0;
-    transition: --start 0.3s ease, --pos 0.3s ease;
-    --start: transparent;
-    --pos: 0%;
-    background: linear-gradient(90deg, var(--start) var(--pos), transparent 20%),
-                linear-gradient(to left, #201e2d3a 0%, #ea535838 100%);
-    border-radius: 16px;
-    
+    background: transparent;
+    border-radius: 8px;
+    transition: transform ease-in-out 0.2s;    
 }
 .card-button:hover{
-    --start: #c77d7017;
-    --pos: 30%;
+    transition: transform ease-in-out 0.2s;
+    transform: scale(1.02);
 }
 
 .blog-grid{
@@ -47,11 +43,11 @@
     width: 100%;
     height: 100%;
     backdrop-filter: blur(30px);
-    border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s;
     color: inherit;
+    border: solid #d4d3c3 2px;
 }
 .blog-card div{
     padding: 15px;
