@@ -4,9 +4,9 @@ import ContactList from './ContactList';
 
 const AboutHead = () => (
     <div className='about-head'>
-    <div className='about-border'/>
-    <div className='about-container'>
-        <div className='left-section'>
+        <div className='about-border'/>
+            <div className='about-container'>
+                <div className='left-section'>
         <section>
             <h3 className="text-heading">
                 <span className='red'>Hi! I'm </span> 
@@ -32,9 +32,6 @@ const AboutHead = () => (
                 I'm always eager to connect, so feel free to <a className="hyper-link red" href='https://github.com/Vex-I'>reach out</a>!
             </p>
         </section>
-        </div>
-        <div className='right-section'>
-            <div style={{backgroundImage: "url('/profile-pic.jpg')"}}></div>
         </div>
     </div>
     </div>

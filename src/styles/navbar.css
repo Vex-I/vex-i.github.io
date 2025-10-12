@@ -14,7 +14,7 @@ TODO: Add some animations for toggling the menu. Ease-in-out should do it.
   top: 0;              
   left: 0;
   z-index: 1000; 
-  border-bottom: #d4d3c3 2px solid;
+  border-bottom: #d4d3c3 1px solid;
 }
 
 .nav-content {

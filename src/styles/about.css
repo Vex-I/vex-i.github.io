@@ -11,16 +11,14 @@
 }
 
 .about-head {
-    position: relative;
-    min-width: 0;
     border-radius: 8px;
-    transition: transform ease 0.3s;
+    background: transparent;
+    min-width: none;
 }
 
 .about-head:hover { 
-  transition: transform ease 0.3s;
-  transform:scale(1.005);
-  box-shadow: #000000 0px 0px 5px;
+  transform: background-color ease 0.3s;
+  background-color: #adada041;
 }
 
 
@@ -46,7 +44,6 @@
   backdrop-filter: blur(30px);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  grid-template-columns: 2fr 1fr; /* ratio 2:1 */
   transition: transform 0.3s ease;
   border: solid #d4d3c3 2px;
   border-top: none;
@@ -55,19 +52,7 @@
 
 
 /* Cutoff point when the about head turns into a collumn*/
-@media (max-width: 1500px) {
-  .about-container {
-    display:flex;
-    grid-template-columns: 1fr;
-    gap: 0px;
-  }
-  .right-section {
-    flex: 0;
-    width: 0;
-    overflow: hidden;
-    display: none;
-  }
-  
+@media (max-width: 90rem) {  
   .right-section div {
     display: none;
   }
@@ -76,28 +61,6 @@
     font-size: 32px;
   }
 
-}
-
-
-.right-section {
-    width: 100%;
-    height: 100%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    display: flex;
-    align-items: center;
-}
-
-.right-section div {
-    background-color: #28282d;
-    background-size: cover;
-    background-position-x: -150px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 70%;
-    height: 70%;
-    max-height: 800px;
-    overflow: hidden;
 }
 
 .contact-list{

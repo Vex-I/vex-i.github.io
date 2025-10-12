@@ -7,7 +7,7 @@ import IOTD from "../components/IOTD";
 const About = () => (
     //TODO: Adjust Bloglist to show recent posts, then display it here.
     //Also, Add some sort of graphic here
-    <div style={{display: 'flex', flexDirection: 'column', gap: '20px', paddingBottom: '50px', alignItems: 'center'}}>
+    <div style={{display: 'grid', gap: '20px', paddingBottom: '50px', alignItems: 'center', justifyContent:"center"}}>
         <section className="about-header">
             <section className="left-header">
                 <IOTD/>
