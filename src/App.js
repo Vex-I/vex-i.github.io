@@ -6,6 +6,7 @@ import About from './pages/About';
 import BlogView from './pages/BlogView';
 import BlogPost from './pages/BlogPage';
 import Footer from './components/Footer';
+import Stars from './stars.js';
 
 
 function App() {
