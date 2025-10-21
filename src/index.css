@@ -3,6 +3,8 @@
 @import './styles/bloglist.css';
 @import './styles/about.css';
 @import './styles/widget.css';
+@import './styles/star.css';
+@import './styles/footer.css';
 
 code {
   font-family: 'Monaspace Argon', monospace;
@@ -10,11 +12,11 @@ code {
 
 body{
   margin: 0;
-  background:  #1f1f23;
+  background:  #000000;
   background-size: cover;
   color: #f3f3f3;
-  display: flex;
   justify-content: center;
+  min-height: 800px;
 }
 
 #root{
@@ -22,6 +24,7 @@ body{
   padding: 0px, 10px 10px;
   background-color: transparent;
   width: 100%;
+  min-height: 800px;
 }
 
 .text{
@@ -54,6 +57,25 @@ p{
   font-size: 18px;
   line-height: 1.6;
   text-decoration: underline;
+}
+
+@media (max-width: 50rem) {
+  .text, .text-subheading, p, .hyper-link {
+    font-size: 12px;
+  }
+  .text-heading {
+    font-size: 24px;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .red {color:#ff5757;}

@@ -1,0 +1,20 @@
+.star {
+    position: fixed;
+    background-color: rgb(243, 243, 243);
+    border-radius: 3.40282e38px;
+    box-shadow: 0 10px 2px rgb(199, 199, 199);
+    z-index: -1;
+}
+
+.star.animate {
+    animation: fadeWane 5s ease-in-out infinite;
+}
+
+@keyframes fadeWane {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}

@@ -5,6 +5,8 @@ import NavBar from './components/NavBar';
 import About from './pages/About';
 import BlogView from './pages/BlogView';
 import BlogPost from './pages/BlogPage';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Route path="/blog" element={<BlogView/>}/>
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
+      <Footer />
   </Router>
   );
 }

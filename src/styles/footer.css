@@ -1,0 +1,19 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    justify-items: left;
+    align-content: center;
+    backdrop-filter: blur(10px) brightness(60%);
+}
+
+.footer-content {
+    padding-left:30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+}

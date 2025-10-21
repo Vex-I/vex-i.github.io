@@ -8,15 +8,6 @@ const AboutHead = () => (
             <div className='about-container'>
                 <div className='left-section'>
         <section>
-            <h3 className="text-heading">
-                <span className='red'>Hi! I'm </span> 
-                <span className='yellow'>Nawwaf Sudi</span> 
-            </h3>
-            <h3 className="text-subheading white">
-                an Undergraduate student 
-                studying Data Science and Analytics @ National University of Singapore (
-                <a className= "hyper-link red" href='https://nus.edu.sg/'>NUS</a>).
-            </h3>
             <p className='text white'>
                  Physicist turned programmer, I am passionate about leveraging technology to solve real-world problems. 
                 I have a keen interest in software development, data science, and machine learning.

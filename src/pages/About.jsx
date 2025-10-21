@@ -3,27 +3,36 @@ import BlogList from "../components/BlogList";
 import SpotifySong from "../components/SpotifySong";
 import Todo from "../components/Todo";
 import IOTD from "../components/IOTD";
+import Hero from "../components/Hero";
 
 const About = () => (
     //TODO: Adjust Bloglist to show recent posts, then display it here.
     //Also, Add some sort of graphic here
-    <div style={{display: 'grid', gap: '20px', paddingBottom: '50px', alignItems: 'center', justifyContent:"center"}}>
+    <div style={{justifyItems: "center"}}>
+        <Hero/>
         <section className="about-header">
-            <section className="left-header">
-                <IOTD/>
-            </section>
             <AboutHead />
             <section className="right-header">
             <SpotifySong />
             <Todo/>
             </section>
         </section>
-        <h1 style={{width: '100%', textAlign: 'left'}}>
-            <span className="yellow">{"Recent Post"}</span>
-            <span className="white">{"."}</span>
+        <h1 style={{width: '100%', textAlign: 'center', marginBottom: '10rem', marginTop: '10rem'}}>
+            <span className="red">{"Recent "}</span>
+            <span className="yellow">{"Post"}</span>
         </h1>
-        
-        <BlogList style={{}} count={3}/>
+        <BlogList count={3}/>
+
+        <h1 style={{width: '100%', textAlign: 'center', marginBottom: '10rem', marginTop: '10rem'}}>
+            <span className="red">{"Featured "}</span>
+            <span className="yellow">{"Project"}</span>
+        </h1>
+
+        <h1 style={{width: '100%', textAlign: 'center', marginBottom: '10rem', marginTop: '10rem'}}>
+            <span className="red">{"Get in "}</span>
+            <span className="yellow">{"Touch"}</span>
+        </h1>
+
     </div>
 );
 

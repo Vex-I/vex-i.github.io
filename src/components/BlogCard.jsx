@@ -12,11 +12,9 @@ const Card = ({slug, title, excerpt, date, image}) => {
             <img src={imgSrc} alt={title} />
             <div>
                 <h2 className="card-title-container">
-                    <span className="card-heading red">{'>'} </span>
-                    <span className="card-heading yellow">{title}</span>
-                    <span className="card-heading red">{'.'} </span>
+                    <span className="card-heading white">{title}</span>
                 </h2>
-                <p className="grey blog-date">{date}</p>
+                <p className="white blog-date">{date}</p>
                 <p className="card-text white">{excerpt}</p>
             </div>
         </section>

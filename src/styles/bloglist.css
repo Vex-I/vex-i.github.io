@@ -13,10 +13,11 @@
     all: unset;
     cursor: pointer;
     padding: 0;
-    background: transparent;
+    background: #6c2222a3;
     border-radius: 8px;
     transition: transform ease-in-out 0.2s;    
 }
+
 .card-button:hover{
     transition: transform ease-in-out 0.2s;
     transform: scale(1.02);
@@ -47,7 +48,6 @@
     overflow: hidden;
     transition: transform 0.2s;
     color: inherit;
-    border: solid #d4d3c3 2px;
 }
 .blog-card div{
     padding: 15px;
@@ -60,18 +60,27 @@
 
 .card-title-container{
     justify-content: left;
+    margin: 0 0 0 0;
 }
 .card-heading{
     font-family: 'Monaspace Argon', monospace;
     text-align: left;
     font-size: 24px;
-    margin: 10px 0;
 }
 .card-text{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.4;
     text-align: left;
+}
+
+@media (max-width: 50rem) {
+    .card-heading{
+        font-size: 20px;
+    }
+    .card-text{
+        font-size: 12px;
+    }
 }
 
 

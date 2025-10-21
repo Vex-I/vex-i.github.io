@@ -4,17 +4,18 @@ TODO: Add some animations for toggling the menu. Ease-in-out should do it.
 
 /* Navbar.css */
 .navbar {
+  position: fixed;
   justify-items: center;
   padding: 0;
   margin-bottom: 2.5%;
   background-color: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: brightness(60%) blur(10px);
   color: #debc93;
   width: 100%;
   top: 0;              
   left: 0;
   z-index: 1000; 
-  border-bottom: #d4d3c3 1px solid;
+  border-bottom: #6c2222 1px solid;
 }
 
 .nav-content {
@@ -30,6 +31,12 @@ TODO: Add some animations for toggling the menu. Ease-in-out should do it.
 .logo {
   font-family: 'Monaspace Argon', monospace;
   font-size: 24px;
+}
+
+@media (max-width: 50rem) {
+  .logo {
+    font-size: 20px;
+  }
 }
 
 .nav-links {
