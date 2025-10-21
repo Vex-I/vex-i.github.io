@@ -6,15 +6,14 @@ const NavBar = () => {
     return(
     <nav className="navbar">
         <div className='nav-content'>
-        <h1 className="logo"># Nawwaf Sudi</h1>
         <button className="menuButton" onClick={() => setOpen(!open)}>
             <MenuLogo className='size-6'/>
         </button>
         <ul className={`nav-links ${open ? 'active' : ''}`}>
-            <li><Link to="/">/home</Link></li>
-            <li><Link to="/blog">/blog</Link></li>
-            <li><Link to="/projects">/projects</Link></li>
-            <li><Link to="/modules">/modules</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/modules">Modules</Link></li>
         </ul>
         </div>
     </nav>

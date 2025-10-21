@@ -2,7 +2,7 @@
     position: fixed;
     background-color: rgb(243, 243, 243);
     border-radius: 3.40282e38px;
-    box-shadow: 0 10px 2px rgb(199, 199, 199);
+    box-shadow: 0px 0px 5px 3px rgba(199, 199, 199, 0.432);
     z-index: -1;
 }
 

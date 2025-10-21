@@ -4,7 +4,8 @@ import ContactList from './ContactList';
 
 const AboutHead = () => (
     <div className='about-head'>
-        <div className='about-border'/>
+        <div className='about-border'>
+        </div>
             <div className='about-container'>
                 <div className='left-section'>
         <section>

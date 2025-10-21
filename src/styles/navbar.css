@@ -15,7 +15,6 @@ TODO: Add some animations for toggling the menu. Ease-in-out should do it.
   top: 0;              
   left: 0;
   z-index: 1000; 
-  border-bottom: #6c2222 1px solid;
 }
 
 .nav-content {
@@ -46,7 +45,7 @@ TODO: Add some animations for toggling the menu. Ease-in-out should do it.
 }
 
 .nav-links li a {
-  color: #ff5757;
+  color: #a73838;
   text-decoration: underline;
   font-size: 18px;
 }
