@@ -18,28 +18,28 @@ const About = () => (
             </section>
         </section>
         <h1 style={{width: '100%', textAlign: 'center', marginTop: '10rem'}}>
-            <span className="red">{"Recent "}</span>
-            <span className="yellow">{"Post"}</span>
+            <span className="white">{"Recent "}</span>
+            <span className="red">{"Post"}</span>
         </h1>
-        <div style={{backgroundColor: "#be4141", height: "0.25rem", width: "7rem",  marginBottom: '10rem'}}></div>
+        <div style={{backgroundColor: "#292556", height: "0.25rem", width: "7rem",  marginBottom: '10rem'}}></div>
         <BlogList count={3}/>
 
         <h1 style={{width: '100%', textAlign: 'center', marginTop: '10rem'}}>
-            <span className="red">{"Featured "}</span>
-            <span className="yellow">{"Project"}</span>
+            <span className="white">{"Featured "}</span>
+            <span className="red">{"Project"}</span>
         </h1>
-        <div style={{backgroundColor: "#be4141", height: "0.25rem", width: "7rem",  marginBottom: '10rem'}}></div>
+        <div style={{backgroundColor: "#292556", height: "0.25rem", width: "7rem",  marginBottom: '10rem'}}></div>
 
         <h1 style={{width: '100%', textAlign: 'center', marginTop: '10rem'}}>
-            <span className="yellow">{"Experience"}</span>
+            <span className="red">{"Experience"}</span>
         </h1>
-        <div style={{backgroundColor: "#be4141", height: "0.25rem", width: "7rem",  marginBottom: '10rem'}}></div>
+        <div style={{backgroundColor: "#292556", height: "0.25rem", width: "7rem",  marginBottom: '10rem'}}></div>
 
         <h1 style={{width: '100%', textAlign: 'center', marginTop: '10rem'}}>
-            <span className="red">{"Get in "}</span>
-            <span className="yellow">{"Touch"}</span>
+            <span className="white">{"Get in "}</span>
+            <span className="red">{"Touch"}</span>
         </h1>
-        <div style={{backgroundColor: "#be4141", height: "0.25rem", width: "7rem",  marginBottom: '10rem'}}></div>
+        <div style={{backgroundColor: "#292556", height: "0.25rem", width: "7rem",  marginBottom: '10rem'}}></div>
 
     </div>
 );
