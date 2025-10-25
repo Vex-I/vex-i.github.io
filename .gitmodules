@@ -1,0 +1,3 @@
+[submodule "vpanel"]
+	path = vpanel
+	url = https://github.com/Vex-I/VPanel

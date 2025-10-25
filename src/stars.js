@@ -4,7 +4,7 @@ for(let i = 1; i <= num; i++) {
     stars.classList.add('star');
     stars.style.left = Math.floor(Math.random() * 100) + '%';
     stars.style.top = Math.floor(Math.random() * 100) + '%';
-    stars.style.width = (Math.random() * 2 + 1) + 'px';
+    stars.style.width = (Math.random() * 2 ) + 'px';
     stars.style.height = stars.style.width;
     document.querySelector('body').appendChild(stars);
 }
