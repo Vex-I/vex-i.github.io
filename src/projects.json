@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "rudrimentarycms",
+    "title": "Personal Website",
+    "date": "22/09/2025",
+    "excerpt": "An overview of the blog system, for those who care."
+  },
+  {
+    "slug": "2DRendererEngine",
+    "title": "2D Renderer Engine",
+    "date": "23/09/2025",
+    "excerpt": "Read on how I use VimSnippets and LaTex as my main note taking method, free of hassle."
+  }
+]

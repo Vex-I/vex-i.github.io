@@ -1,30 +1,49 @@
 @import './styles/font.css';
-@import './styles/navbar.css';
-@import './styles/bloglist.css';
-@import './styles/about.css';
-@import './styles/widget.css';
-@import './styles/star.css';
-@import './styles/footer.css';
 
 code {
   font-family: 'Monaspace Argon', monospace;
 }
 
+[data-theme="dark"] {
+  --color-background: hsl(0, 0%, 10%);
+  --color-accent: hsl(0, 0%, 15%);
+  --color-text: hsl(0, 0%, 75%);
+  --color-shadow: hsl(0, 0%, 5%);
+  --color-text-invert: hsl(0, 0%, 10%);
+  --color-primary: hsl(124, 0%, 45%);
+  --color-border: hsl(0, 0%, 20%);
+}
+
+[data-theme="light"] {
+  --color-background: hsl(0, 0%, 100%);
+  --color-accent: hsl(0, 0%, 95%);
+  --color-text: hsl(0, 0%, 10%);
+  --color-shadow: hsl(0, 0%, 40%);
+  --color-text-invert: hsl(0, 0%, 90%);
+  --color-primary: hsl(124, 0%, 45%);
+  --color-border: hsl(0, 0%, 70%);
+}
+
 body{
   margin: 0;
-  background:  #03030e;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
   background-size: cover;
-  color: #f3f3f3;
-  justify-content: center;
-  min-height: 800px;
+  justify-content: center; 
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.parent * {
+  transition: color 0.3s, background-color 0.3s;
 }
 
 #root{
-  justify-items: center;
-  padding: 0px, 10px 10px;
-  background-color: transparent;
+  display: grid;
   width: 100%;
-  min-height: 800px;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  background-color: transparent;
 }
 
 .text{
@@ -42,7 +61,7 @@ body{
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Monaspace Argon', monospace;
   text-align: left;
-  color: #5c11b6;
+  color: var(--color-text);
   line-height: 1.4;
 }
 
@@ -51,21 +70,12 @@ p{
   text-align: left;
   line-height: 1.6;
 }
-.hyper-link{
+a {
   text-align: left;
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  color: var(--color-primary);
   line-height: 1.6;
   text-decoration: underline;
-}
-
-@media (max-width: 50rem) {
-  .text, .text-subheading, p, .hyper-link {
-    font-size: 12px;
-  }
-  .text-heading {
-    font-size: 24px;
-  }
 }
 
 .fade-in {
@@ -78,8 +88,445 @@ p{
   to { opacity: 1; }
 }
 
-.red {color:#5c11b6;}
-.yellow {color: #e8c088;}
-.grey {color: #3d3d49;}
-.blue {color: #1f1f23;}
-.white {color: #f3f3f3;}
+
+@property --start {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --pos {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 10%;
+}
+
+.about-head {
+    border-radius: 8px;
+    width: 40em;
+    background: transparent;
+}
+
+.about-head:hover { 
+  transform: background-color ease 0.3s;
+  background-color: #adada041;
+}
+
+
+.about-border {
+    height: 40px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: var(--color-primary);
+    margin-bottom: 0px;
+}
+
+.about-container{
+  margin-top: 0px;
+  width: 40em;
+  display: grid;
+  gap: 30px;
+  background: transparent;
+  padding: 0px 1em 1em 1em;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: transform 0.3s ease;
+  border-top: none;
+}
+
+.about-container section {
+    width:80%;
+}
+
+
+
+/* Cutoff point when the about head turns into a collumn*/
+@media (max-width: 60rem) {  
+  .about-container {
+    gap: 20px;
+  }
+}
+
+.contact{
+  width:50em;
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  justify-items: center;
+  align-content: center;
+}
+
+.contact-box {
+    width: 20em;
+    background-color: var(--color-accent);
+    border-radius: 8px;
+}
+
+.contact-box button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    display: grid; 
+    cursor: pointer;
+    grid-template-rows: 2fr 0.25fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding:1em;
+}
+
+.contact-box button svg {
+    width:4em;
+    height:4em;
+    stroke: var(--color-primary);
+    fill: var(--color-primary);
+}
+
+.contact-box button h3 {
+    text-align: center;
+}
+
+@media(max-width: 80em) {
+
+}
+
+
+.hero-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: calc(100vh);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.hero-container .text-subheading {
+    max-width: 30rem;
+}
+
+@media (max-width: 50rem) {
+    .hero-container .text-heading {
+        font-size: 24px;
+    }
+
+    .hero-container .text-subheading {
+        font-size: 14px;
+        max-width: 20rem;
+    }
+}
+
+
+.blog-list{
+    gap: 20px;
+    margin-top: 20px;
+    justify-items: center;
+    background-color: transparent;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.project-list {
+    gap: 20px;
+    margin-top: 20px;
+    background-color: transparent;
+    width: 100%;
+    justify-items:center;
+}
+
+.project-grid {
+    width: 90em;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 40em));
+    gap: 1.5rem;
+    background-color: transparent;
+}
+
+.project-card-button { 
+    height:20em;
+    justify-content: left;
+    all: unset;
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+    border-radius: 8px;
+    transition: transform ease-in-out 0.2s;    
+}
+.project-card {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-accent);
+    backdrop-filter: blur(30px);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    color: inherit;
+}
+
+
+.project-card div{
+    padding: 15px;
+}
+.project-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-button{
+    width: 350px;
+    height: 500px;
+    justify-content: left;
+    all: unset;
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+    border-radius: 8px;
+    transition: transform ease-in-out 0.2s;    
+}
+
+.card-button:hover{
+    transition: transform ease-in-out 0.2s;
+    transform: scale(1.01);
+}
+
+
+.project-card-button:hover{
+    transition: transform ease-in-out 0.2s;
+    transform: scale(1.01);
+}
+
+.blog-grid{
+    max-width: 70em;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 0px;
+    background-color: transparent;
+}
+
+@media (max-width: 90em) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    max-width:35em;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    max-width:35em;
+  }
+}
+
+.blog-card{
+    width: 100%;
+    display:grid;
+    grid-template-rows: 0.2fr 1fr 0.1fr;
+    align-items: center;
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    color: inherit;
+}
+
+.blog-card div{
+    padding: 15px;
+}
+.blog-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title-container{
+    justify-content: left;
+    margin: 0 0 0 0;
+}
+.card-heading{
+    font-family: 'Monaspace Argon', monospace;
+    text-align: left;
+    font-size: 18px;
+}
+.card-text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+@media (max-width: 50rem) {
+    .card-heading{
+        font-size: 20px;
+    }
+    .card-text{
+        font-size: 18px;
+    }
+}
+
+.blog-container{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.blog-container section{
+    background-color: transparent; 
+    border-right: 5px solid var(--color-accent);
+    max-width: 800px;
+    padding : 5%;
+}
+
+
+.navbar {
+  justify-items: center;
+  align-content: center;
+  height: 4em;
+  padding: 0;
+  margin-bottom: 2.5%;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  width: 100%;
+  top: 0;              
+  left: 0;
+  z-index: 1000; 
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 92.5%;
+}
+
+
+
+.logo {
+  font-family: 'Monaspace Argon', monospace;
+  font-size: 24px;
+}
+
+@media (max-width: 50rem) {
+  .logo {
+    font-size: 20px;
+  }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menuButton {
+  display: none;
+  font-size: 36px;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.menuButton svg {
+    stroke: var(--color-text);
+}
+
+.size-6 {
+  width: 24px;
+  height: 24px;
+}
+
+/* The actual rensponsice behaviour
+    TODO: Read up more on react's hook, possibly using a mix of JS 
+          for this part, though i don't think that's neccessary.
+    Here, max-width is the cutoff point where the navbar changes.
+*/
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+.about-header{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: grid;
+    grid-template-columns: 2.3fr 1fr;
+    gap: 1.5rem;
+    min-width: none;
+    max-width: 60rem;
+}
+
+@media (max-width: 60rem) {
+    .about-header {
+        grid-template-columns: 1fr 0fr;
+        gap:0px;
+        width: auto;
+        min-width: none;
+    }   
+    .right-header {
+        visibility: hidden;
+    }
+    .left-header {
+        visibility: hidden;
+    }
+}
+
+.right-header {
+    display:grid;
+    gap: 1.5rem;
+    grid-template-rows: 1fr 4fr;
+}
+
+.spotify-widget {
+    border-radius: 8px;
+    background-color: var(--color-primary);
+}
+
+.todo-widget {
+    border-radius: 8px;
+    background-color: var(--color-primary);
+}
+
+footer {
+    width: 100%;
+    height: 5rem;
+    margin-top: 2.5%;
+    justify-items: left;
+    align-content: center;
+    background-color: var(--color-accent);
+}
+
+.footer-content {
+    padding-left:30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+}

@@ -3,7 +3,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-content">
             <p>© 2025 Nawwaf Sudi. All rights reserved.</p>
-            <p>illustration by Unsplash</p>
+            <p>Illustration by Unsplash</p>
             </div>
         </footer>
     );
