@@ -2,6 +2,8 @@ import Card from '../components/BlogCard';
 import post from '../posts.json';
 ///Component that displays the list of blogs in a grid format.
 const BlogList = (count=-1) => (
+
+    <div style={{display:'grid', alignItems:'center', justifyItems:'center', gridTemplateColumn:'1fr'}}>
     <div className="blog-list">
         <section className="blog-grid">
             {post
@@ -12,6 +14,7 @@ const BlogList = (count=-1) => (
         )
         )}
         </section>
+    </div>
     </div>
 );
 export default BlogList;

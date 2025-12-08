@@ -3,6 +3,8 @@ import Card from '../components/ProjectCard.jsx'
 
 ///Component that displays the list of projects in a grid format.
 const ProjectList = (count=-1) => (
+
+    <div style={{display:'grid', alignItems:'center', justifyItems:'center', gridTemplateColumn:'1fr'}}>
     <div className="project-list">
         <section className="project-grid">
             {projects
@@ -13,6 +15,7 @@ const ProjectList = (count=-1) => (
         )
         )}
         </section>
+    </div>
     </div>
 );
 export default ProjectList;

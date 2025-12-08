@@ -6,6 +6,8 @@ import {ReactComponent as Github} from '../assets/github.svg';
 
 const Contact = () => {
     return(
+
+        <div style={{display:'grid', alignItems:'center', justifyItems:'center', gridTemplateColumn:'1fr'}}>
         <div className="contact">
                 <ContactBox 
                     name='Email' 
@@ -17,6 +19,7 @@ const Contact = () => {
                     contact='Vex-i'
                     imgSource= <Github/>
                     link = '//github.com/vex-i'/>
+        </div>
         </div>
     );
 }
