@@ -20,7 +20,8 @@ const Hero = () => {
 }
 
 const ThemeButton = () => {
-    const [dark, setDark] = React.useState(true);
+    const bool = localStorage.getItem('theme') == 'dark' ? true : false;
+    const [dark, setDark] = React.useState(bool);
     const Logo = dark ? Moon : Sun;
 
     document.documentElement.setAttribute('data-theme', dark ? "dark" : "light");
