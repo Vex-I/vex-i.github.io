@@ -26,7 +26,7 @@ const ProjectList = ({count=-1, preview=false}) => {
                 setProjects([]);
             } finally {
                 setIsLoading(false);
-            }
+            }/content/?type=blog
         };
         fetchProjects();
     }, []); 
