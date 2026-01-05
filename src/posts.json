@@ -1,16 +1,18 @@
 [
-  {
-    "slug": "rudrimentarycms",
-    "title": "Test Posts for Tests People",
-    "date": "22/09/2025",
-    "excerpt": "An overview of the blog system, for those who care.",
-    "image": "blog1.jpg"
-  },
-  {
-    "slug": "vim-latex-setup",
-    "title": "Vim + LaTex for Rapid, Clean Notetaking",
-    "date": "23/09/2025",
-    "excerpt": "Read on how I use VimSnippets and LaTex as my main note taking method, free of hassle.",
-    "image": "Vimblog.png"
-  }
+    {
+        "slug": "rudrimentarycms",
+        "title": "Test Posts for Tests People",
+        "date": "22/09/2025",
+        "excerpt": "An overview of the blog system, for those who care.",
+        "image": "blog1.jpg",
+        "tags": [{"name":"React", "color":"blue"}, {"name":"OpenGL","color":"green"}, {"name":"C#","color":"red"}]
+    },
+    {
+        "slug": "vim-latex-setup",
+        "title": "Vim + LaTex for Rapid, Clean Notetaking",
+        "date": "23/09/2025",
+        "excerpt": "Read on how I use VimSnippets and LaTex as my main note taking method, free of hassle.",
+        "image": "Vimblog.png",
+        "tags": [{"name":"React", "color":"blue"}, {"name":"OpenGL","color":"green"}, {"name":"C#","color":"red"}]
+    }
 ]

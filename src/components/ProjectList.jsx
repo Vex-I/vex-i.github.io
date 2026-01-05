@@ -1,21 +1,67 @@
-import projects from '../projects.json';
 import Card from '../components/ProjectCard.jsx'
+import React, { useState, useEffect } from 'react';
+import { Flex, Empty, Grid } from 'antd'
+const { useBreakpoint } = Grid;
 
-///Component that displays the list of projects in a grid format.
-const ProjectList = (count=-1) => (
+const ProjectList = ({count=-1, preview=false}) => {
+    const [projects, setProjects] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    <div style={{display:'grid', alignItems:'center', justifyItems:'center', gridTemplateColumn:'1fr'}}>
-    <div className="project-list">
-        <section className="project-grid">
+    const screens = useBreakpoint();
+    const isMobile = !screens.md;
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const response = await fetch(`${process.env.API_URI}/api/content/?type=project`);
+                if (!response.ok) {
+                    throw new Error(`${response.status} : ${response.statusText}`);
+                }
+                const data = await response.json();
+                setProjects(data);
+                setError(null);
+            } catch (err) {
+                setError(err.message);
+                setProjects([]);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchProjects();
+    }, []); 
+
+    const contentWidth = isMobile ? '90vw' : '40em';
+    const contentHeight = isMobile ? '40vh' : '20em';
+
+    if (isLoading) {
+        return(
+        <Flex wrap gap='large' align='center' justify='center'>
+                <div style={{width: contentWidth, height:contentHeight }}> 
+                    <Card loading={true}/>
+                </div>
+                <div style={{width: contentWidth, height:contentHeight }}> 
+                    <Card loading={true}/>
+                </div>
+        </Flex>
+        )
+    }
+
+    if (error) {
+        return <Empty description={error}></Empty>
+    }
+    return(
+        <Flex wrap gap='large' align='flex-start' justify='center'>
             {projects
                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                 .slice(0, count > 0 ? count : projects.length)
                 .map((project) => (
-          <Card key={project.slug} {...project} />
+            <div style={{width: {contentWidth}, height:{contentHeight}}}> 
+                <Card key={project.slug} {...project} />
+            </div>
         )
         )}
-        </section>
-    </div>
-    </div>
+        </Flex>
 );
+};
 export default ProjectList;

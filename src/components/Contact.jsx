@@ -1,43 +1,54 @@
 import React from "react";
 import {ReactComponent as Mail} from '../assets/mail.svg';
-import {ReactComponent as Github} from '../assets/github.svg';
-
-
+import { MailFilled, GithubOutlined } from '@ant-design/icons'
+import { MoonFilled, SunFilled } from '@ant-design/icons'
+import { Card, Flex, Button, message} from 'antd';
 
 const Contact = () => {
-    return(
+    const [messageApi, contextHolder] = message.useMessage();
+    const buttonStyles = {
+        root: {
+            backgroundColor: 'transparent',
+            border: 'none',
+            padding: '2em',
+        },
+    }
 
-        <div style={{display:'grid', alignItems:'center', justifyItems:'center', gridTemplateColumn:'1fr'}}>
-        <div className="contact">
-                <ContactBox 
-                    name='Email' 
-                    contact='nawwaf.aydin@gmail.com'
-                    imgSource= <Mail/>
-                    link = '//vex-i.pages.dev'/>
-                <ContactBox 
-                    name='Github' 
-                    contact='Vex-i'
-                    imgSource= <Github/>
-                    link = '//github.com/vex-i'/>
-        </div>
-        </div>
-    );
-}
-
-const ContactBox = ({name, contact, imgSource, link}) => {
-    const goToLink = () => {
-        window.location.href = link;
+    const mailClicked = () => {
+        navigator.clipboard.writeText("nawwaf.aydin@gmail.com");
+        messageApi.info('Email Copied to Clipboard.');
     }
 
     return(
-    <div className='contact-box'> 
-        <button onClick={goToLink}>
-        {imgSource}
-        <h3 style={{fontWeight:'bold'}}>{name}</h3>
-        <h3>{contact}</h3>
-        </button>
-    </div>
-    )
-}
+        <Flex align='center' justify='center' gap='large'>
+            {contextHolder}
+            <Button onClick={ mailClicked }shape='circle' size='large' styles={ buttonStyles } icon={<MailFilled style={{fontSize:'24px', color:'var(--color-text)'}}/>}/> 
+            <ThemeButton/>
+            <Button onClick={() => window.open('https://www.github.com/vex-i', '_blank')} shape='circle' size='large' styles={ buttonStyles } icon={<GithubOutlined style={{fontSize:'24px', color:'var(--color-text)'}}/>}/> 
+        </Flex>
+    );
+};
 
+const ThemeButton = () => {
+    const bool = localStorage.getItem('theme') == 'dark' ? true : false;
+    const [dark, setDark] = React.useState(bool);
+    const Logo = dark ? (<MoonFilled size='large' style={{fontSize:'32px', color:'var(--color-text)'}}/>) : (<SunFilled size='large' style={{fontSize:'32px', color:'var(--color-text)'}}/>);
+
+    const buttonStyles = {
+        root: {
+            backgroundColor: 'transparent',
+            border: '0.2em solid var(--color-text)',
+            padding: '3em',
+        },
+    }
+    document.documentElement.setAttribute('data-theme', dark ? "dark" : "light");
+    function toggleDark() {
+        setDark(!dark);
+        localStorage.setItem("theme", !dark ? "dark" : "light");
+    }
+    return(
+        <Button shape='circle' styles={ buttonStyles } onClick={toggleDark} icon = {Logo}>
+        </Button>
+    );   
+}
 export default Contact;

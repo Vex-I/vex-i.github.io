@@ -1,10 +1,13 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
 import About from './pages/About';
 import BlogView from './pages/BlogView';
 import BlogPost from './pages/BlogPage';
+import ProjectView from './pages/ProjectView';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
 
@@ -22,15 +25,30 @@ function App() {
     return (
         <Router>
         <NavBar />
+        <ScrollToTop/>
+        <div style={{padding: '0 1em 0 1em', display:'grid', placeItems:'center', marginBottom:'4em', minHeight:'100vh'}}>
         <Routes>
         <Route path="/" element={<About />} />
         <Route path="/blog" element={<BlogView/>}/>
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/project" element={<ProjectView/>}/>
         <Route path="*" element={<NotFound/>} />
         </Routes>
+        </div>
         <Footer />
         </Router>
     );
 }
 
 export default App;
+
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};

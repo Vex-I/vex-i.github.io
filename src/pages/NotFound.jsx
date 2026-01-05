@@ -1,6 +1,8 @@
+import { Flex } from 'antd'
+
 const NotFound = () => {
     return(
-    <div className="hero-container">
+    <Flex style={{minHeight:'100vh'}} align='center' justify='center'>
     <div style ={{alignItems:'center', display:'flex', flexDirection:'column'}}>
         <h3 className="text-heading fade-in" style={{textAlign: "center", fontSize:'44'}}>
             404
@@ -9,7 +11,7 @@ const NotFound = () => {
             The page you're looking for does not exist.
         </h4>
     </div>
-    </div>
+    </Flex>
     );
 }
 

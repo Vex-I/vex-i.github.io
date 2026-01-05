@@ -1,20 +1,70 @@
+import React, { useState, useEffect } from 'react';
 import Card from '../components/BlogCard';
-import post from '../posts.json';
-///Component that displays the list of blogs in a grid format.
-const BlogList = (count=-1) => (
+import { Flex, Empty, Grid } from 'antd'
+const { useBreakpoint } = Grid;
 
-    <div style={{display:'grid', alignItems:'center', justifyItems:'center', gridTemplateColumn:'1fr'}}>
-    <div className="blog-list">
-        <section className="blog-grid">
-            {post
+const BlogList = ({count=-1, preview=false}) => {
+    const [posts, setPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const screens = useBreakpoint();
+    const isMobile = !screens.md;
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await fetch(`${process.env.API_URI}/api/content/?type=blog`);
+                if (!response.ok) {
+                    throw new Error(`${response.status} : ${response.statusText}`);
+                }
+                const data = await response.json();
+                setPosts(data);
+                setError(null);
+            } catch (err) {
+                setError(err.message);
+                setPosts([]);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchPosts();
+    }, []); 
+
+    const contentWidth = isMobile ? '90vw' : '20em';
+    const contentHeight = isMobile ? '40vh' : '25em'; 
+    
+    if(isLoading) {
+        return(<Flex wrap gap='large' align='flex-start' justify='center'>
+            <div style={{width: contentWidth, height:contentHeight }}> 
+                <Card loading={true}/>
+            </div>
+            <div style={{width: contentWidth, height:contentHeight }}> 
+                <Card loading={true}/>
+            </div>
+            <div style={{width: contentWidth, height:contentHeight }}> 
+                <Card loading={true}/>
+            </div>
+        </Flex>)
+    }
+
+
+    if (error) {
+        return <Empty description={error}></Empty>
+    }
+
+    return(
+        <Flex wrap gap='large' align='flex-start' justify='center'>
+            {posts
                 .sort((a, b) => new Date(b.date) - new Date(a.date))
-                .slice(0, count > 0 ? count : post.length)
+                .slice(0, count > 0 ? count : posts.length)
                 .map((post) => (
-          <Card key={post.slug} {...post} />
+            <div style={{width: contentWidth, height:contentHeight }}> 
+                <Card key={post.slug} {...post} />
+            </div>
         )
         )}
-        </section>
-    </div>
-    </div>
+        </Flex>
 );
+}
 export default BlogList;
