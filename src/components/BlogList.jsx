@@ -14,7 +14,12 @@ const BlogList = ({count=-1, preview=false}) => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URI}/api/content/?type=blog`);
+                const response = await fetch(`${process.env.REACT_APP_API_URI}/api/content/?type=blog`, 
+                    {
+                        headers: {
+                            "readtoken": "f0a40f762b3dc47c0a26946c33b926b29cd6b993648f2809ea27535b4fd669e3"
+                        }
+                    });
                 if (!response.ok) {
                     throw new Error(`${response.status} : ${response.statusText}`);
                 }

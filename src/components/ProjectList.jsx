@@ -14,7 +14,12 @@ const ProjectList = ({count=-1, preview=false}) => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URI}/api/content/?type=project`);
+                const response = await fetch(`${process.env.REACT_APP_API_URI}/api/content/?type=project`,
+                    {
+                        headers: {
+                           "readtoken": process.env.REACT_APP_READ_TOKEN 
+                        }
+                    });
                 if (!response.ok) {
                     throw new Error(`${response.status} : ${response.statusText}`);
                 }
