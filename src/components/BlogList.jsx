@@ -14,7 +14,7 @@ const BlogList = ({count=-1, preview=false}) => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch(`${process.env.API_URI}/api/content/?type=blog`);
+                const response = await fetch(`${process.env.REACT_APP_API_URI}/api/content/?type=blog`);
                 if (!response.ok) {
                     throw new Error(`${response.status} : ${response.statusText}`);
                 }

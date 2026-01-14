@@ -17,6 +17,7 @@ function App() {
         return localStorage.getItem("theme") === "light" ? "light" : "dark";
     });
 
+    console.log("API:", process.env.REACT_APP_API_URI)
     React.useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
         localStorage.setItem("theme", theme);
