@@ -90,15 +90,15 @@ h1 {
 }
 
 h2 {
-  font-size: var(--fs-700);
-}
-
-h3 {
   font-size: var(--fs-600);
 }
 
+h3 {
+  font-size: var(--fs-400);
+}
+
 h4 {
-  font-size: var(--fs-500);
+  font-size: var(--fs-400);
 }
 
 p{
@@ -227,8 +227,6 @@ a {
 .project-card-button { 
     justify-content: left;
     all: unset;
-    width: 100%;
-    height: 100%;
     cursor: pointer;
     padding: 0;
     background: transparent;
@@ -341,12 +339,12 @@ a {
   height: 4em;
   display: grid;
   place-items: center;
-  margin-bottom: 2.5%;
-  background-color: var(--color-background);
+  background-color: var(--color-accent);
   transition: border 0.3s, background-color 0.3s;
   color: var(--color-primary);
-  border-bottom: 2px solid var(--color-border);
+  box-shadow: 0px 4px 22px -12px var(--color-shadow);
   width: 100vw;
+  position: fixed;
   top: 0;              
   left: 0;
   z-index: 1000; 
@@ -430,11 +428,13 @@ a {
 
 
 .footer-content {
+    color: var(--color-text);
     background-color: var(--color-accent);
+    box-shadow: 0px 4px 15px 0px var(--color-shadow);
     padding:2em;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
 }

@@ -27,7 +27,7 @@ function App() {
         <Router>
         <NavBar />
         <ScrollToTop/>
-        <div style={{padding: '0 1em 0 1em', display:'grid', placeItems:'center', marginBottom:'4em', minHeight:'100vh'}}>
+        <div style={{padding: '6em 0 0 0', marginBottom:'4em', minHeight:'100vh'}}>
         <Routes>
         <Route path="/" element={<About />} />
         <Route path="/blog" element={<BlogView/>}/>

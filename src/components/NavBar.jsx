@@ -38,10 +38,10 @@ const NavBar = () => {
     <nav className="navbar">
         <div className='nav-content'>
         <Popover placement='bottom' content= { content } trigger='click' styles={ styles }>
-        <Button icon= { <MenuOutlined style={{fontSize:'24px'}}/> } color={ 'var(--color-primary)' } variant='text' size="large"/>
+        <Button icon= { <MenuOutlined style={{fontSize:'18px'}}/> } color={ 'var(--color-primary)' } variant='text' size="large"/>
         </Popover>
         <Popover trigger='hover' content= 'Back to Homepage' styles={ styles }>
-        <Button icon= { <HomeOutlined size='large' style={{fontSize:'24px'}}/> } color={ 'var(--color-primary)' } variant='text' size="large" onClick={ () => navigate('/')}/>
+        <Button icon= { <HomeOutlined size='large' style={{fontSize:'18px'}}/> } color={ 'var(--color-primary)' } variant='text' size="large" onClick={ () => navigate('/')}/>
         </Popover>
         </div>
     </nav>

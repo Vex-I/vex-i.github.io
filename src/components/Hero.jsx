@@ -11,8 +11,7 @@ const Hero = () => {
     const styles = {
         root: {
             borderRadius:'15em',
-            padding: '1em',
-            border:'0.5em solid var(--color-primary)'
+            border:'0.5em solid var(--color-text-invert)'
         },
         image: {
             width:imageSize,

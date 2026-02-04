@@ -1,9 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { Card } from 'antd';
 import TagContainer from '../components/TagContainer.jsx';
+import { Grid } from 'antd'
+const { useBreakpoint } = Grid;
 
 const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=false}) => {
     const navigate = useNavigate();
+
+    const screens = useBreakpoint();
+    const isMobile = !screens.md;
+
     const loadingStyles = {
         root: {
             background: 'var(--color-background)',
@@ -21,7 +27,7 @@ const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=
     const styles = {
         root: {
             border: '1px solid var(--color-border)',
-            background: 'var(--color-background)',
+            background: 'transparent',
             color: 'var(--color-text)',
             width: '100%',
             height: '100%',
@@ -49,8 +55,11 @@ const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=
         } 
     }
 
+    const contentWidth = !isMobile ? '30em' : '20em';
+    const contentHeight = !isMobile ? '15em' : '15em';
+
     return(
-        <button onClick={ () => onClick(`/blog/${slug}`)} className="project-card-button">
+        <button style={{ width: `${contentWidth }`, height: `${ contentHeight }` }} onClick={() => onClick(`/blog/${slug}`)} className="project-card-button">
             <Card
                 hoverable
                 title= { loading ? '' : header }
