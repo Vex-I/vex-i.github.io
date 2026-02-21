@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Card } from 'antd';
 import TagContainer from '../components/TagContainer.jsx';
 
+//TODO: Fix loading logic to only show when resources + image is loaded.
 const BlogCard = ({slug, hasAPage, link, title, excerpt, date, image, tags, loading}) => {
     const navigate = useNavigate();
     const loadingStyles = {
@@ -24,7 +25,6 @@ const BlogCard = ({slug, hasAPage, link, title, excerpt, date, image, tags, load
             background: 'var(--color-background)',
             color: 'var(--color-text)',
             width:'100%',
-            height:'100%',
         },
 
         header: {
@@ -57,7 +57,7 @@ const BlogCard = ({slug, hasAPage, link, title, excerpt, date, image, tags, load
                 styles= { loading ? loadingStyles : styles }
                 loading = { loading }
             >
-                <h4> {title} </h4>
+                <h3 style={{margin: '0'}}> {title} </h3>
                 <p> {excerpt} </p>
                 <TagContainer tagList={ tags }/>
             </Card>

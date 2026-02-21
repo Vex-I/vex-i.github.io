@@ -32,3 +32,21 @@ export const fetchPosts = async (setPosts, setError, setIsLoading) => {
         setIsLoading(false);
     }
 };
+
+export const fetchContent = async (slug, setContent, setError, setIsLoading) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_BE_URI}/content?slug=${slug}`);
+        if(!response.ok) {
+            throw new Error(`${response.status} : ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        setContent(data);
+        setError(null);
+    } catch(err) {
+        setError(err.message);
+    } finally {
+        setIsLoading(false);
+    }
+
+}

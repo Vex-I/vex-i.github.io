@@ -14,15 +14,10 @@ const Contact = () => {
         },
     }
 
-    const mailClicked = () => {
-        navigator.clipboard.writeText("nawwaf.aydin@gmail.com");
-        messageApi.info('Email Copied to Clipboard.');
-    }
-
     return(
         <Flex align='center' justify='center' gap='large'>
             {contextHolder}
-            <Button onClick={ mailClicked }shape='circle' size='large' styles={ buttonStyles } icon={<MailFilled style={{fontSize:'24px', color:'var(--color-text)'}}/>}/> 
+            <Button onClick={ () => window.open('mailto:nawwaf.aydin@gmail.com', '_blank')}shape='circle' size='large' styles={ buttonStyles } icon={<MailFilled style={{fontSize:'24px', color:'var(--color-text)'}}/>}/> 
             <ThemeButton/>
             <Button onClick={() => window.open('https://www.github.com/vex-i', '_blank')} shape='circle' size='large' styles={ buttonStyles } icon={<GithubOutlined style={{fontSize:'24px', color:'var(--color-text)'}}/>}/> 
         </Flex>

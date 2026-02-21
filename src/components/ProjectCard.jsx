@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Card } from 'antd';
 import TagContainer from '../components/TagContainer.jsx';
-import { Grid } from 'antd'
+import { Grid, Col, Row } from 'antd'
 const { useBreakpoint } = Grid;
 
 const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=false}) => {
@@ -37,6 +37,13 @@ const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=
             borderBottom: '1px solid var(--color-border)',
             background: 'var(--color-background)',
             color: 'var(--color-text)'
+        },
+
+        body: {
+            paddingTop: '0',
+            paddingBottom: '0',
+            display: 'grid',
+            gridTemplateRows: '1fr 0.2fr',
         },
     };
 

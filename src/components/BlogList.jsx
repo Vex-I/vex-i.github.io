@@ -4,6 +4,7 @@ import { Flex, Empty, Grid } from 'antd'
 import { fetchPosts } from '../functions/fetchContent.js';
 const { useBreakpoint } = Grid;
 
+//TODO: Fix scaling issue
 const BlogList = ({count=-1, preview=false}) => {
     const [posts, setPosts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -17,17 +18,16 @@ const BlogList = ({count=-1, preview=false}) => {
     }, []); 
 
     const contentWidth = !isMobile ? '20em' : '20em';
-    const contentHeight = !isMobile ? '25em' : '30em';
     
     if(isLoading) {
         return(<Flex wrap gap='large' align='flex-start' justify='center'>
-            <div style={{width: contentWidth, height:contentHeight }}> 
+            <div style={{width: contentWidth}}> 
                 <Card loading={true}/>
             </div>
-            <div style={{width: contentWidth, height:contentHeight }}> 
+            <div style={{width: contentWidth}}> 
                 <Card loading={true}/>
             </div>
-            <div style={{width: contentWidth, height:contentHeight }}> 
+            <div style={{width: contentWidth}}> 
                 <Card loading={true}/>
             </div>
         </Flex>)
@@ -39,12 +39,12 @@ const BlogList = ({count=-1, preview=false}) => {
     }
 
     return(
-        <Flex wrap gap='large' align='center' justify='center'>
+        <Flex wrap gap='large' align='flex-start' justify='center'>
             {posts
                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                 .slice(0, count > 0 ? count : posts.length)
                 .map((post) => (
-            <div style={{width: contentWidth, height:contentHeight }}> 
+            <div style={{width: contentWidth}}> 
                 <Card key={post.slug} {...post} />
             </div>
         )

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Flex, Empty, Grid } from 'antd'
 import { fetchProjects } from '../functions/fetchContent';
 
+//TODO: Fix Scalling issue
 const ProjectList = ({count=-1, preview=false}) => {
     const [projects, setProjects] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
