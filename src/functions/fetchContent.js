@@ -33,6 +33,23 @@ export const fetchPosts = async (setPosts, setError, setIsLoading) => {
     }
 };
 
+export const fetchWikiPosts = async (setPosts, setError, setIsLoading) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_BE_URI}/content?type=wiki-post`);
+        if (!response.ok) {
+            throw new Error(`${response.status} : ${response.statusText}`);
+        }
+        const data = await response.json();
+        setPosts(data);
+        setError(null);
+    } catch (err) {
+        setError(err.message);
+        setPosts([]);
+    } finally {
+        setIsLoading(false);
+    }
+};
+
 export const fetchContent = async (slug, setContent, setError, setIsLoading) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_BE_URI}/content?slug=${slug}`);
@@ -41,7 +58,7 @@ export const fetchContent = async (slug, setContent, setError, setIsLoading) => 
         }
 
         const data = await response.json();
-        setContent(data);
+        setContent(data[0]);
         setError(null);
     } catch(err) {
         setError(err.message);
@@ -50,3 +67,5 @@ export const fetchContent = async (slug, setContent, setError, setIsLoading) => 
     }
 
 }
+
+

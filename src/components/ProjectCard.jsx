@@ -58,7 +58,7 @@ const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=
         if(hasAPage) {
             navigate(string);
         } else if(link) {
-            navigate(link);
+            window.open(link, "_blank");
         } 
     }
 
@@ -66,12 +66,13 @@ const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=
     const contentHeight = !isMobile ? '15em' : '15em';
 
     return(
-        <button style={{ width: `${contentWidth }`, height: `${ contentHeight }` }} onClick={() => onClick(`/blog/${slug}`)} className="project-card-button">
+        <button style={{ width: `${contentWidth }`, height: `${ contentHeight }` }} onClick={() => onClick(`/project/${slug}`)} className="project-card-button">
             <Card
                 hoverable
                 title= { loading ? '' : header }
                 styles= { loading ? loadingStyles : styles }
                 loading= { loading }
+                extra={hasAPage || link? (<a>Documented</a>): <></> }
             >
                 <p className="project-card-text">{excerpt}</p>
                 <TagContainer tagList={tags}/>

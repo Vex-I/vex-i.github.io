@@ -21,7 +21,7 @@ const About = () => {
         <Hero/>
         <ScrollPrompt/>
         <Title title='Projects'/>
-        <ProjectList count ={3} preview={true}/>
+        <ProjectList count ={5} preview={true}/>
         <div style={{margin: '1em'}}/>
         <Button size='large' styles = { styles } onClick= {() => navigate('/project')}>See more</Button>
         <Title title='Recent Posts'/>

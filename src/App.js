@@ -10,6 +10,7 @@ import BlogPost from './pages/BlogPage';
 import ProjectView from './pages/ProjectView';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
+import MainWiki from './pages/MainWiki'
 
 
 function App() {
@@ -27,13 +28,14 @@ function App() {
         <Router>
         <NavBar />
         <ScrollToTop/>
-        <div style={{padding: '6em 0 0 0', marginBottom:'4em', minHeight:'100vh'}}>
+        <div style={{padding: '4em 0 0 0', marginBottom:'4em', minHeight:'100vh'}}>
         <Routes>
         <Route path="/" element={<About />} />
         <Route path="/blog" element={<BlogView/>}/>
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/project" element={<ProjectView/>}/>
         <Route path="*" element={<NotFound/>} />
+        <Route path="/wiki" element={<MainWiki/>}/>
         </Routes>
         </div>
         <Footer />

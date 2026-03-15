@@ -7,17 +7,18 @@ import { LoadingOutlined } from "@ant-design/icons"
 import { Spin, Empty, Flex, Divider} from "antd"
 import { marked } from "marked";
 import NotFound from "./NotFound"
+import { wait } from "@testing-library/user-event/dist/utils";
 
 //TODO: Include a TOC sidebar
 export default function BlogPost() {
     const { slug } = useParams();
-    const [content, setContent] = React.useState([]);
+    const [content, setContent] = React.useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         fetchContent(slug, setContent, setError, setIsLoading);
-    }, []);
+    }, "");
 
     if(isLoading) {
         return(
@@ -39,10 +40,15 @@ export default function BlogPost() {
     }
     
     let contentHTML = "";
+    
     // TODO: Sanitize the HTML, just in case.
-
     try{
-        contentHTML = marked.parse(content[0].markdown);
+        if(content.html) {
+            contentHTML = content.html;
+        } else {
+            //Compatibility purposes.
+            contentHTML = marked.parse(content.markdown);
+        }
     } catch(err) {
         return(<NotFound/>);
     }
@@ -50,8 +56,8 @@ export default function BlogPost() {
     return (
         <article className="blog-container">
             <section>
-            <h1>{content[0].title}</h1>
-            <p className="text-subheading">Last updated: {new Date(content[0].updatedAt).toDateString()}</p>
+            <h1>{content.title}</h1>
+            <p className="text-subheading">Last updated: {new Date(content.updatedAt).toDateString()}</p>
             <Divider/>
             <div className="markdown-body" dangerouslySetInnerHTML={{__html: contentHTML}}/>
             </section>

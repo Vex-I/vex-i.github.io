@@ -4,7 +4,7 @@ import { Card } from 'antd';
 import TagContainer from '../components/TagContainer.jsx';
 
 //TODO: Fix loading logic to only show when resources + image is loaded.
-const BlogCard = ({slug, hasAPage, link, title, excerpt, updatedAt, createdAt, image, tags, loading}) => {
+const WikiPostCard = ({slug, hasAPage, link, title, excerpt, date, image, tags, loading}) => {
     const navigate = useNavigate();
     const loadingStyles = {
         root: {
@@ -27,12 +27,6 @@ const BlogCard = ({slug, hasAPage, link, title, excerpt, updatedAt, createdAt, i
             width:'100%',
         },
 
-        body: {
-            display: 'grid',
-            gridTemplateRows: '1fr, 0.2fr, 2fr, 0.2fr',
-            justifyItem: 'left',
-        },
-
         header: {
             border: '1px solid var(--color-border)',
             background: 'var(--color-primary)',
@@ -49,7 +43,7 @@ const BlogCard = ({slug, hasAPage, link, title, excerpt, updatedAt, createdAt, i
         if(hasAPage) {
             navigate(string);
         } else if(link) {
-            window.open(link, "_blank");
+            navigate(link);
         } 
     }
 
@@ -57,15 +51,10 @@ const BlogCard = ({slug, hasAPage, link, title, excerpt, updatedAt, createdAt, i
         <button onClick={() => onClick(`/blog/${slug}`)} className="card-button-post">
             <Card
                 hoverable
-                cover= {     
-                    <img src={image} alt={title} />
-                }
                 styles= { loading ? loadingStyles : styles }
                 loading = { loading }
             >
                 <h3 style={{margin: '0'}}> {title} </h3>
-                <br />
-                <h4>Created at {new Date(createdAt).toDateString()}</h4>
                 <p> {excerpt} </p>
                 <TagContainer tagList={ tags }/>
             </Card>
@@ -73,4 +62,4 @@ const BlogCard = ({slug, hasAPage, link, title, excerpt, updatedAt, createdAt, i
     );
 }
 
-export default BlogCard;
+export default WikiPostCard;
