@@ -17,17 +17,15 @@ const About = () => {
     const navigate = useNavigate();
 
     return (
-        <div style={{display:'grid', placeItems: "center"}}>
-        <Hero/>
-        <ScrollPrompt/>
-        <Title title='Projects'/>
-        <ProjectList count ={5} preview={true}/>
-        <div style={{margin: '1em'}}/>
-        <Button size='large' styles = { styles } onClick= {() => navigate('/project')}>See more</Button>
-        <Title title='Recent Posts'/>
-        <BlogList count={3} preview= {true}/>
-        <div style={{margin: '1em'}}/>
-        <Button size='large' styles = { styles } onClick= {() => navigate('/blog')}>See all post</Button>
+        <div>
+            <Hero />
+            <ScrollPrompt />
+            <Title title='Projects' />
+            <ProjectList count={5} preview={true} />
+            <div style={{ margin: '1em' }} />
+            <Title title='Recent Posts' />
+            <BlogList count={3} preview={true} />
+            <div style={{ margin: '1em' }} />
         </div>
     )}
 

@@ -1,55 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Card } from 'antd';
 import TagContainer from '../components/TagContainer.jsx';
-import { Grid, Col, Row } from 'antd'
-const { useBreakpoint } = Grid;
 
-const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=false}) => {
+const ProjectCard = ({slug, hasAPage, link, title, excerpt, tags, loading=false}) => {
     const navigate = useNavigate();
 
-    const screens = useBreakpoint();
-    const isMobile = !screens.md;
-
-    const loadingStyles = {
-        root: {
-            background: 'var(--color-background)',
-            color: 'var(--color-text)',
-            width: '100%',
-            height: '100%',
-        },
-        header: {
-            borderBottom: '1px solid var(--color-border)',
-            background: 'var(--color-background)',
-            color: 'var(--color-text)'
-        },
-    };
-
-    const styles = {
-        root: {
-            border: '1px solid var(--color-border)',
-            background: 'transparent',
-            color: 'var(--color-text)',
-            width: '100%',
-            height: '100%',
-        },
-
-        header: {
-            borderBottom: '1px solid var(--color-border)',
-            background: 'var(--color-background)',
-            color: 'var(--color-text)'
-        },
-
-        body: {
-            paddingTop: '0',
-            paddingBottom: '0',
-            display: 'grid',
-            gridTemplateRows: '1fr 0.2fr',
-        },
-    };
-
-    const header = (
-     <h4> {title} </h4>   
-    );
 
     const onClick = (string) => {
         if(loading) {
@@ -62,22 +16,34 @@ const ProjectCard = ({slug, hasAPage, link, title, excerpt, date, tags, loading=
         } 
     }
 
-    const contentWidth = !isMobile ? '30em' : '20em';
-    const contentHeight = !isMobile ? '15em' : '15em';
+    if(loading) {
+
+        return(
+            <div style={{display: 'grid', placeItems:'center', width:'100%', minHeight:'200px'}}>
+                <h3>Loading Content...</h3>
+            </div>
+        );
+    }
 
     return(
-        <button style={{ width: `${contentWidth }`, height: `${ contentHeight }` }} onClick={() => onClick(`/project/${slug}`)} className="project-card-button">
-            <Card
-                hoverable
-                title= { loading ? '' : header }
-                styles= { loading ? loadingStyles : styles }
-                loading= { loading }
-                extra={hasAPage || link? (<a>Documented</a>): <></> }
-            >
-                <p className="project-card-text">{excerpt}</p>
+        <div style={{display:'grid', gridTemplateRows:'2em auto', minHeight:'150px', padding:'10px', borderRadius:'6px', border:'1px solid var(--color-primary)'}}>
+            <div style={{width:'100%', display:'grid', borderBottom:'3px solid var(--color-primary)', gridTemplateColumns:'auto auto'}}>
+                <div style={{display:'flex', justifyContent:'left'}}>
+                <h4>
+                    {title}
+                </h4>
+                </div>
+                <div style={{display:'flex', justifyContent:'right'}}>
+                <h4 onClick={ () => onClick(`/project/${slug}`)}>
+                    {hasAPage || link? (<a style={{textDecoration:'underline'}} >Documented</a>): <></> } 
+                </h4>
+                </div>
+            </div>
+            <div style={{display:'grid', gridTemplateAreas:'auto auto'}}>
+                <p>{excerpt}</p>
                 <TagContainer tagList={tags}/>
-            </Card>
-        </button>
+            </div>
+        </div>
     );
 }
 

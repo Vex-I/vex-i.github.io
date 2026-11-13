@@ -28,7 +28,8 @@ function App() {
         <Router>
         <NavBar />
         <ScrollToTop/>
-        <div style={{padding: '4em 0 0 0', marginBottom:'4em', minHeight:'100vh'}}>
+        <div style={{display:'flex', justifyContent:'center', padding: '4em 0 0 0', marginBottom:'4em', minHeight:'100vh'}}>
+        <div style={{maxWidth:'900px', padding:'50px'}}>
         <Routes>
         <Route path="/" element={<About />} />
         <Route path="/blog" element={<BlogView/>}/>
@@ -37,6 +38,7 @@ function App() {
         <Route path="*" element={<NotFound/>} />
         <Route path="/wiki" element={<MainWiki/>}/>
         </Routes>
+        </div>
         </div>
         <Footer />
         </Router>

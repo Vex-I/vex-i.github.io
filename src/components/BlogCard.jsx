@@ -1,44 +1,8 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Card } from 'antd';
 import TagContainer from '../components/TagContainer.jsx';
 
-//TODO: Fix loading logic to only show when resources + image is loaded.
 const BlogCard = ({slug, hasAPage, link, title, excerpt, updatedAt, createdAt, image, tags, loading}) => {
     const navigate = useNavigate();
-    const loadingStyles = {
-        root: {
-            background: 'var(--color-background)',
-            color: 'var(--color-text)',
-            width:'100%',
-            height:'100%',
-        },
-        header: {
-            borderBottom: '1px solid var(--color-border)',
-            background: 'var(--color-background)',
-            color: 'var(--color-text)'
-        },
-    };
-    const styles = {
-        root: {
-            border: '1px solid var(--color-border)',
-            background: 'var(--color-background)',
-            color: 'var(--color-text)',
-            width:'100%',
-        },
-
-        body: {
-            display: 'grid',
-            gridTemplateRows: '1fr, 0.2fr, 2fr, 0.2fr',
-            justifyItem: 'left',
-        },
-
-        header: {
-            border: '1px solid var(--color-border)',
-            background: 'var(--color-primary)',
-            color: 'var(--color-text-invert)'
-        },
-    };
 
 
     const onClick = (string) => {
@@ -53,23 +17,40 @@ const BlogCard = ({slug, hasAPage, link, title, excerpt, updatedAt, createdAt, i
         } 
     }
 
+    if (loading) {
+        return(
+            <div style={{display:'grid', placeItems:'center'}}>
+                Loading Content...
+            </div>
+        )
+    }
+
     return(
-        <button onClick={() => onClick(`/blog/${slug}`)} className="card-button-post">
-            <Card
-                hoverable
-                cover= {     
-                    <img src={image} alt={title} />
-                }
-                styles= { loading ? loadingStyles : styles }
-                loading = { loading }
-            >
-                <h3 style={{margin: '0'}}> {title} </h3>
-                <br />
-                <h4>Created at {new Date(createdAt).toDateString()}</h4>
-                <p> {excerpt} </p>
-                <TagContainer tagList={ tags }/>
-            </Card>
-        </button>
+        <div style={{display:'grid', overflow:'hidden', gap:'16px', 
+                gridTemplateColumns: '1fr 3fr', minHeight:'150px', 
+                borderRadius:'6px', border:'1px solid var(--color-primary)',
+                cursor:'pointer'}}
+            onClick={ () => onClick(`/blog/${slug}`)}>
+                    <img src={image} style={{width:'100%', height:'100%', objectFit:'cover'}}/>
+            <div style={{display:'grid', gridTemplateRows:'2em auto', padding:'10px'}}>
+                <div style={{display:'grid', gridTemplateColumns:'auto auto'}}>
+                    <div style={{display:'flex', justifyContent:'left'}}>
+                    <h4>
+                        {title}
+                    </h4>
+                    </div>
+                    <div style={{display:'flex', justifyContent:'right'}}>
+                        <h4 onClick={ () => onClick(`/blog/${slug}`)}>
+                            {new Date(createdAt).toLocaleDateString()} 
+                        </h4>
+                    </div>
+                </div>
+                <div style={{display:'grid', gridTemplateAreas:'auto auto'}}>
+                    <p>{excerpt}</p>
+                    <TagContainer tagList={tags}/>
+                </div>
+            </div>
+        </div>
     );
 }
 

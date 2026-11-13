@@ -103,12 +103,10 @@ h3 {
 }
 
 h4 {
-    color: var(--color-primary);
     font-size: var(--fs-300);
 }
 
 h5 {
-    color: var(--color-primary);
 }
 
 p{
@@ -122,7 +120,6 @@ a {
   font-family: 'Roboto', sans-serif;
   color: var(--color-primary);
   line-height: 1.6;
-  text-decoration: underline;
 }
 
 .fade-in {
@@ -133,6 +130,14 @@ a {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.ant-input::placeholder {
+  color: var(--color-primary); 
 }
 
 
@@ -235,23 +240,6 @@ a {
     background-color: transparent;
 }
 
-.project-card-button { 
-    justify-content: left;
-    all: unset;
-    cursor: pointer;
-    padding: 0;
-    background: transparent;
-    border-radius: 8px;
-    transition: transform ease-in-out 0.2s;    
-}
-.project-card {
-    background-color: var(--color-accent);
-    backdrop-filter: blur(30px);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s;
-    color: inherit;
-}
 
 
 

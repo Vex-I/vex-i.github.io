@@ -2,7 +2,7 @@ import React from 'react';
 import { Tag, Flex } from 'antd';
 
 
-const TagContainer = ({tagList}) => {
+const TagContainer = ({ tagList }) => {
     const styles = {
         root: {
             background: 'none',
@@ -11,13 +11,13 @@ const TagContainer = ({tagList}) => {
     };
 
     return(
-        <Flex gap='small' align='left' wrap>
-            {tagList.map((tag) => (
+        <div style={{display:'flex', gap:'8px', justifyContent:'left', alignItems:'flex-end'}}>
+            {tagList ? tagList.map((tag) => (
                 <Tag color={tag.color} variant='outlined' styles= { styles }>
                     {tag.name}
                 </Tag>
-            ))}
-        </Flex>
+            )) : <></>}
+        </div>
     );
 };
 
